@@ -8,7 +8,7 @@
 header( 'Content-Type: ' . feed_content_type( 'rss' ) . '; charset=' . get_option( 'blog_charset' ), true );
 $more = 1;
 
-echo '<?xml version="1.0" encoding="' . get_option( 'blog_charset' ) . '"?' . '>'; ?>
+echo '<?xml version="1.0" encoding="' . get_option( 'blog_charset' ) . '"?>'; ?>
 <rss version="0.92">
 <channel>
 	<title><?php wp_title_rss(); ?></title>
