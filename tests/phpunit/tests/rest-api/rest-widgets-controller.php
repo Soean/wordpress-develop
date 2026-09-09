@@ -1270,17 +1270,10 @@ class WP_Test_REST_Widgets_Controller extends WP_Test_REST_Controller_Testcase {
 	 */
 	public function test_store_html_as_superadmin() {
 		wp_set_current_user( self::$superadmin_id );
-		if ( is_multisite() ) {
-			$this->assertSame(
-				'<div class="textwidget"><script>alert(1)</script></div>',
-				$this->update_text_widget_with_raw_html( '<script>alert(1)</script>' )
-			);
-		} else {
-			$this->assertSame(
-				'<div class="textwidget"><script>alert(1)</script></div>',
-				$this->update_text_widget_with_raw_html( '<script>alert(1)</script>' )
-			);
-		}
+		$this->assertSame(
+			'<div class="textwidget"><script>alert(1)</script></div>',
+			$this->update_text_widget_with_raw_html( '<script>alert(1)</script>' )
+		);
 	}
 
 	protected function update_text_widget_with_raw_html( $html ) {
