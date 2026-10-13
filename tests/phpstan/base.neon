@@ -112,6 +112,10 @@ parameters:
 	inferPrivatePropertyTypeFromConstructor: true
 
 	# Constants whose values may differ depending on the install.
+	#
+	# A constant listed with a type may hold a value of a different type than its default,
+	# so the type of the value defined in bootstrap.php is not enough. WP_DEBUG_LOG can be a
+	# path to the log file, and WP_DEBUG_DISPLAY can be null to leave display_errors as is.
 	dynamicConstantNames:
 		- ALLOW_SUBDIRECTORY_INSTALL
 		- AUTH_SALT
@@ -147,8 +151,8 @@ parameters:
 		- WP_ALLOW_MULTISITE
 		- WP_CACHE
 		- WP_DEBUG
-		- WP_DEBUG_DISPLAY
-		- WP_DEBUG_LOG
+		WP_DEBUG_DISPLAY: 'bool|null'
+		WP_DEBUG_LOG: 'bool|string'
 		- WP_DEVELOPMENT_MODE
 		- WP_INSTALLING
 		- WP_INSTALLING_NETWORK
