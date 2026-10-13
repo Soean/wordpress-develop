@@ -50,7 +50,7 @@ wp_localize_script(
 		'settings'        => array(
 			'isInstall'  => true,
 			'canInstall' => current_user_can( 'install_themes' ),
-			'installURI' => current_user_can( 'install_themes' ) ? self_admin_url( 'theme-install.php' ) : null,
+			'installURI' => self_admin_url( 'theme-install.php' ),
 			'adminUrl'   => parse_url( self_admin_url(), PHP_URL_PATH ),
 		),
 		'l10n'            => array(
