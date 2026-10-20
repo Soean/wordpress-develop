@@ -1550,6 +1550,7 @@ class Tests_Query_RandomContentRedirect extends WP_UnitTestCase {
 		for ( $i = 0; $i < 30; $i++ ) {
 			$this->redirect_location = null;
 			$this->go_to( home_url( '/random/' ) );
+			$this->assertNotNull( $this->redirect_location, 'Every random request should redirect.' );
 			$seen[ $this->redirect_location ] = true;
 		}
 
